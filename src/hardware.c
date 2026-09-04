@@ -192,7 +192,7 @@ extern uint8_t vnd_local_bd_addr[BD_ADDR_LEN];
 ******************************************************************************/
 
 static char fw_patchfile_path[256] = FW_PATCHFILE_LOCATION;
-static char fw_patchfile_name[128] = { 0 };
+static char fw_patchfile_name[128] = FW_PATCHFILE_NAME;
 static char fw_prepatch_name[384] = FW_PRE_PATCH;
 #if (VENDOR_LIB_RUNTIME_TUNING_ENABLED == TRUE)
 static int fw_patch_settlement_delay = -1;

@@ -68,6 +68,11 @@
 #define FW_PATCHFILE_LOCATION "/vendor/firmware/"  /* maguro */
 #endif
 
+/* Name of the firmware patch file; empty looks the directory up by chipset name */
+#ifndef FW_PATCHFILE_NAME
+#define FW_PATCHFILE_NAME ""
+#endif
+
 #ifndef UART_TARGET_BAUD_RATE
 #define UART_TARGET_BAUD_RATE           3000000
 #endif
