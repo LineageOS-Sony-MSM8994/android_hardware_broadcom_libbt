@@ -35,6 +35,7 @@
 #include "bt_vendor_brcm.h"
 #include "userial.h"
 #include "userial_vendor.h"
+#include "upio.h"
 #include <unistd.h>
 
 /******************************************************************************
@@ -153,8 +154,8 @@ void userial_ioctl_init_bt_wake(int fd)
 
 
 
-    /* assert BT_WAKE through ioctl */
-    ioctl(fd, USERIAL_IOCTL_BT_WAKE_ASSERT, NULL);
+    /* assert BT_WAKE through upio so its state tracking sees it */
+    upio_set(UPIO_BT_WAKE, UPIO_ASSERT, 0);
     ioctl(fd, USERIAL_IOCTL_BT_WAKE_GET_ST, &bt_wake_state);
     VNDUSERIALDBG("userial_ioctl_init_bt_wake read back BT_WAKE state=%i", \
                bt_wake_state);
